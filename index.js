@@ -10,7 +10,7 @@ app.set("view engine", "ejs");
 const todoRoutes = require("./routes/todoRoutes");
 
 app.use("/", todoRoutes);
-
+//listen
 app.listen(port, () => {
   console.log(`running on http://localhost:${port}`);
 });
