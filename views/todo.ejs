@@ -1,0 +1,35 @@
+<%-include("partials/header" , {title:"todo-list"})%>
+<body>
+    <h1>Hello <%=firstname%> <%=secondname%> !!</h1>
+    <h2>TODO-list</h2>
+    <br><br><br>
+
+    <form action="/add" method="post">
+    <input type="text" name="task" placeholder="enter task"><button type="submit" >add</button>
+    </form>
+
+
+    <%if(todos.length===0){%>
+
+        <p>"No tasks!!"</p>
+    <%}else{%>
+              <ul>
+
+       <% todos.forEach((todo , index)=>{%>
+
+  
+            <li><%=todo%>
+
+            <form action="/delete" method="post" style="display: inline;">
+                <input type="hidden" name="index" value="<%=index%>">
+                <button type="submit">X</button>
+            </form></li>
+
+            
+       <% })%>
+       </ul>
+    <%}%>
+</body>
+
+
+

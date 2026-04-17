@@ -1,0 +1,15 @@
+<html>
+<%-include("partials/header", {title:"home page"})%>
+<body>
+<h1>Hi this is home page</h1>
+<h2>this is server side rendering</h2>
+<h3>heres a dynamic data- "<%= data %>"</h3>
+
+<!--Take two inputs in variables name1 and surname to be moved to the next page-->
+<form action="/todo" method="post">
+    <input type="text" name="name1" placeholder="enter username">
+    <input type="text" name="surname" placeholder="enter surname">
+    <button  type="submit">Submit</button>
+</form>
+</body>
+</html>
